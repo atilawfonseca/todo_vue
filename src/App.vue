@@ -60,7 +60,11 @@ const addTarefa = ()=> {
 <main class="container">
   
 <Cabecalho :tarefas-pendentes="getAtividadePendente().length" />
+<Formulario :add-tarefa="addTarefa" :estado-tarefa="estado.tarefaTemp" 
+:nova-tarefa="novaTarefa => estado.tarefaTemp = novaTarefa.target.value" 
+:estado-filtro="filtro => estado.filtro = filtro.target.value"/>
 
+<ListaDeTarefas :get-tarefas-filtradas="getFiltroTarefas()" /> 
 
 
 </main>
